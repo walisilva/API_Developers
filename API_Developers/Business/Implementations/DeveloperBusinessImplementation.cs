@@ -1,7 +1,6 @@
 ﻿using API_Developers.Model;
 using API_Developers.Repository.Generic;
 using Newtonsoft.Json;
-using System.Net.Http;
 using System.Text;
 
 namespace API_Developers.Business.Implementations
