@@ -142,10 +142,10 @@ namespace API_Developers.Business.Implementations
             if (arrEmail.Length == 2)
             {
                 // Verifica se o domínio do e-mail está fora do padrão.
-                if (arrEmail[1] != "prosoft.com.br")
+                if (arrEmail[1] != "padrao.com.br")
                 {
                     // Corrige o e-mail. Deixei o comentário no final para demonstração no console.
-                    return arrEmail[0] + "@prosoft.com.br (modificado, antes era '@" + arrEmail[1] + "')";
+                    return arrEmail[0] + "@padrao.com.br (modificado, antes era '@" + arrEmail[1] + "')";
                 }
                 else
                 {
