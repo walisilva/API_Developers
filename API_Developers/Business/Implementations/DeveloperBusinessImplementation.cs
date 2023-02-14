@@ -2,6 +2,7 @@
 using API_Developers.Repository.Generic;
 using Newtonsoft.Json;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace API_Developers.Business.Implementations
 {
@@ -134,7 +135,7 @@ namespace API_Developers.Business.Implementations
 
         private string? ModifyEmail(string? email)
         {
-            if (email == null)
+            if (!EmailValid(email))
                 return null;
 
             var arrEmail = email.Split('@');
@@ -155,6 +156,15 @@ namespace API_Developers.Business.Implementations
             // Poderíamos aplicar algum tratamento de remover o e-mail (ou setar alguma flag de email inválido),
             // mas deixei para demonstração no console.
             return email += " (não é um email válido!)";
+        }
+
+        private static bool EmailValid(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return false;
+            email = email.Trim();
+            Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+            return rg.IsMatch(email);
         }
 
         private Developer SaveDevelopersJson(string content)
