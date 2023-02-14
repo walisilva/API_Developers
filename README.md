@@ -6,5 +6,5 @@ Uma API em C# que consome uma outra API externa e que atualiza o banco de dados 
 
 Alguns padrões de projeto (Design Patterns) utilizados:
 
-. Generic Repository
-. SOLID (SRP)
+- Generic Repository
+- SOLID (SRP)
